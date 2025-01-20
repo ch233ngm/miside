@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MiSide - Anime Horror Game with Mita | Psychological Adventure RPG</title>
     
+    <!-- 预加载关键资源 -->
+    <link rel="preload" as="image" href="/public/cover.webp" type="image/webp">
+    
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/public/favico/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/public/favico/favicon-32x32.png">
@@ -43,8 +46,14 @@
         .hero-section {
             background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/public/cover.webp');
             background-size: cover;
-            background-position: 50% center; /* 移动端默认显示右侧部分 */
+            background-position: 50% center;
             background-repeat: no-repeat;
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+        }
+        
+        .hero-section.loaded {
+            opacity: 1;
         }
         
         /* 在大屏幕上恢复居中显示 */
@@ -61,7 +70,10 @@
     </style>
 </head>
 <body class="font-poppins">
-    <section class="hero-section min-h-screen flex items-center justify-center px-4 py-16">
+    <!-- 添加一个低质量的背景占位 -->
+    <div class="fixed inset-0 bg-gray-900"></div>
+    
+    <section class="hero-section min-h-screen flex items-center justify-center px-4 py-16 relative">
         <div class="container mx-auto">
             <div class="max-w-4xl mx-auto text-center text-white">
                 <h1 class="font-quicksand text-5xl md:text-7xl mb-6 font-bold">MiSide</h1>
@@ -110,5 +122,17 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- 图片加载优化脚本 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroSection = document.querySelector('.hero-section');
+            const img = new Image();
+            img.src = '/public/cover.webp';
+            img.onload = function() {
+                heroSection.classList.add('loaded');
+            };
+        });
+    </script>
 </body>
 </html>
