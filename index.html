@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiSide - Anime Horror Game with Mita | Psychological Adventure RPG</title>
+    
+    <!-- 添加 meta 描述 -->
+    <meta name="description" content="MiSide: A psychological horror game featuring Mita, your virtual companion. Experience the contrast between cute anime aesthetics and dark psychological elements in this unique indie RPG adventure.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'quicksand': ['Quicksand', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/public/cover.webp');
+            background-size: cover;
+            background-position: 50% center; /* 移动端默认显示右侧部分 */
+            background-repeat: no-repeat;
+        }
+        
+        /* 在大屏幕上恢复居中显示 */
+        @media (min-width: 768px) {
+            .hero-section {
+                background-position: center;
+            }
+        }
+        
+        .game-tag {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+<body class="font-poppins">
+    <section class="hero-section min-h-screen flex items-center justify-center px-4 py-16">
+        <div class="container mx-auto">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <h1 class="font-quicksand text-5xl md:text-7xl mb-6 font-bold">MiSide</h1>
+                
+                <p class="text-lg md:text-xl mb-8 leading-relaxed">
+                    Step into MiSide, where you'll form a special bond with Mita, your charming virtual companion. What begins as a heartwarming connection soon reveals a darker reality, as cute anime aesthetics intertwine with psychological horror elements. Will you navigate this twisted world while protecting both Mita and yourself?
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-3 mb-10">
+                    <span class="game-tag px-4 py-2 rounded-full text-sm">Psychological Horror</span>
+                    <span class="game-tag px-4 py-2 rounded-full text-sm">Anime Style</span>
+                    <span class="game-tag px-4 py-2 rounded-full text-sm">Visual Novel</span>
+                    <span class="game-tag px-4 py-2 rounded-full text-sm">Story Rich</span>
+                    <span class="game-tag px-4 py-2 rounded-full text-sm">Cute & Horror</span>
+                    <span class="game-tag px-4 py-2 rounded-full text-sm">Adventure RPG</span>
+                    <span class="game-tag px-4 py-2 rounded-full text-sm">Multiple Endings</span>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                    <div class="aspect-video rounded-lg overflow-hidden">
+                        <iframe class="w-full h-full"
+                            src="https://www.youtube.com/embed/Mt5Uat93SOY?si=dWY8je4uARhYYHBI"
+                            title="MiSide Trailer"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    
+                    <div class="flex items-center justify-center">
+                        <a href="https://store.steampowered.com/app/2527500/_MiSide/"
+                           target="_blank"
+                           class="inline-flex items-center gap-2 bg-[#171a21] hover:bg-[#2a475e] transition-colors px-8 py-4 rounded-lg text-white font-semibold">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.4 0 0 5.4 0 12c0 5.4 3.6 9.9 8.4 11.4l1.2-2.4c-3.6-1.2-6-4.5-6-8.4 0-4.8 3.9-8.7 8.7-8.7 4.8 0 8.7 3.9 8.7 8.7 0 3.9-2.4 7.2-6 8.4l1.2 2.4C21.6 21.9 24 17.4 24 12c0-6.6-5.4-12-12-12z"/>
+                            </svg>
+                            View on Steam
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
